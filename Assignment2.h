@@ -21,7 +21,7 @@ public:
   char userInput(); // ask user random or file
   string inputFile(); // ask for name of inputFile
   int getRandomInput(); //prompt fopr when a random game board is chosen
-  string gameBoundary();
+  char gameBoundary();
   void doughnut();
   void mirror();
   void classic();

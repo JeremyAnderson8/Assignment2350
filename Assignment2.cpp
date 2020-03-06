@@ -167,11 +167,44 @@ int GameOfLife::getRandomInput(){
 
 }
 
-string GameOfLife::gameBoundary(){
-  cout << "Which game mode would you like? ('Classic', 'Mirror', 'Doughnut')" << endl;
-  while(!safeStr(userBoundary)){
-    cout << "You have an error." << endl;
-    cout << "Which game mode would you like? ('Classic', 'Mirror', 'Doughnut')" <<endl;
+char GameOfLife::gameBoundary(){
+  bool validResponse = false;
+  while(validResponse == false){
+    cout << "Which game mode would you like?" << endl;
+    cout << "Enter 'C' for Classic" << endl;
+    cout << "Enter 'M' for Mirror" << endl;
+    cout << "Enter 'D' for Doughnut" << endl;
+    cin >> userResponse1;
+    if(tolower(userResponse1) == 'c'){
+      validResponse = true;
+      classic();
+      break;
+    }
+    else if(tolower(userResponse1) == 'm'){
+      validResponse = true;
+      mirror();
+      break;
+    }
+    else if(tolower(userResponse1) == 'd'){
+      validResponse = true;
+      doughnut();
+      break;
+    }
+
   }
 
+  return userResponse1;
+
+}
+
+void GameOfLife::classic(){
+  cout << "classic" << endl;
+}
+
+void GameOfLife::mirror(){
+    cout << "mirror" << endl;
+}
+
+void GameOfLife::doughnut(){
+    cout << "doughnut" << endl;
 }
