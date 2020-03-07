@@ -28,11 +28,16 @@ public:
   bool safeInt(int &output);
   bool safeStr(string &outputS);
   int GetFileInfo();
+  char outputSelection();
+  void outputToFile();
+  void outputToConsole();
+  void pause();
+  void enter();
+
 
 
 
   //vars
-
   int output;
   int maxSize;
   char userResponse1;
@@ -44,10 +49,15 @@ public:
   string textLine;
   int intLineRow;
   int intLineCol;
+  int intLine;
   int counter;
   ifstream userFile;
   string userBoundary;
   string outputS;
+  char tempChar;
+  int Xcounter;
+  char outputDecision;
+  char pauseOrEnter;
 
   char *myArrayRow;
   char *myArrayCol;
