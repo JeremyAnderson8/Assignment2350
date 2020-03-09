@@ -1,10 +1,9 @@
 # CPSC-350-DataStructures
 
-
-Matthew Olivo
-#2314084
+Jeremy Anderson
+#2314466
 Assignment 2
-Jeremy Anderson is my partner
+Matthew Olivo is my partner
 
 
 

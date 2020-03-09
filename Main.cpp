@@ -1,9 +1,11 @@
-#include "Assignment2350.h"
+#include "Assignment2.h"
 #include <iostream>
 
 using namespace std;
 
 int main(int argc, char **argv) {
+  GameBoard *myBoard = new GameBoard();
+  myBoard->getInputInfo();
   char outputDecision;
   bool validResponse1 = false;
   while(validResponse1 == false){
@@ -21,7 +23,7 @@ int main(int argc, char **argv) {
       bool validResponse = false;
       while(validResponse == false){
         if(tolower(pausesOrEnter) == 'e'){
-          //enter();
+          //enter()
           validResponse= true;
           break;
 

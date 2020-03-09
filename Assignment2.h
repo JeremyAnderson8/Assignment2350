@@ -66,9 +66,14 @@ public:
   void getFileValues();
   bool safeInt(int &output);
   void outputToFile();
+  void getInputInfo();
   int width;
+  int widthTemp;
+  int lengthTemp;
   int probOfX;
   int length;
+  int userRand;
+  int popDen;
   string fileName;
   string textLine;
   ifstream userFile;
@@ -91,6 +96,10 @@ public:
 
   void startClassic();
   char ** nextArr = NULL;
+  int width;
+  int length;
+  int width1;
+  int width2;
 
 
 };
@@ -101,6 +110,8 @@ public:
 
   void startMirror();
   char ** nextArr = NULL;
+  int width;
+  int length;
 
 };
 class Doughnut{
@@ -110,5 +121,7 @@ public:
 
   void startDoughnut();
   char ** nextArr = NULL;
+  int width;
+  int length;
 
 };

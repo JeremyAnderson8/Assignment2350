@@ -1,10 +1,19 @@
-#include "Assignment2350.h"
+#include "Assignment2.h"
 #include <iostream>
 
 using namespace std;
 
 
 GameBoard::GameBoard(){
+
+
+}
+
+GameBoard::~GameBoard(){
+
+}
+
+void GameBoard::getInputInfo(){
   char response;
   bool userResponse = false;
 
@@ -24,14 +33,7 @@ GameBoard::GameBoard(){
       cout << "Invalid input" << endl;
     }
   }
-
 }
-
-
-GameBoard::~GameBoard(){
-
-}
-
 bool GameBoard::safeInt(int &output){
   int temp;
   cin>>temp;
@@ -46,22 +48,16 @@ bool GameBoard::safeInt(int &output){
 }
 
 void GameBoard::getRandomValues(){
-  int width = 0;
-  int length = 0;
-  int popDen = 0;
   double randNum = ((double)rand()/(double)RAND_MAX);
 
-
   cout << "Enter the width of the Game board: " << endl;
-  cin >> width;
   while (!safeInt(width)){
     cout << "You have an error. " << endl;
     cout << "Give me the width of the gameboard: " << endl;
-
   }
 
-  cout << "Enter the legnth of the Game board: " << endl;
-  cin >> length;
+  cout << width << endl;
+  cout << "Enter the length of the Game board: " << endl;
 
   while (!safeInt(length)){
     cout << "You have an error. " << endl;
@@ -69,11 +65,10 @@ void GameBoard::getRandomValues(){
 
   }
   cout << "Enter a random number between 1 and 100: " << endl;
-  cin >> popDen;
 
-  while (!safeInt(popDen)){
+  while (!safeInt(userRand)){
     cout << "You have an error. " << endl;
-    cout << "Give me the Population Density (as a percent) of the gameboard: " << endl;
+    cout << "Enter a random number between 1 and 100: " << endl;
 
   }
 
@@ -85,7 +80,8 @@ void GameBoard::getRandomValues(){
 
   for (int i = 0; i < width; ++i){
     for(int j = 0; j < length; ++j){
-      if(RandVar < probOfX){
+      randNum = ((double)rand()/(double)RAND_MAX);
+      if(randNum < userRand){
         RandBoard[i][j] = 'X';
       }
       else{
