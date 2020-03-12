@@ -7,73 +7,30 @@
 
 using namespace std;
 
-class GameOfLife{
-public:
-  GameOfLife();//default constructor
-  ~GameOfLife();//deconstructor
-
-  int *randomBoard();
-  int *chooseFile();
-  void classic();
-  //aux functions
-  char userInput(); // ask user random or file
-  string inputFile(); // ask for name of inputFile
-  int getLength();
-  int getWidth();
-  int getPopDen();
-  char gameBoundary();
-  char outputSelection();
-  void outputToConsole();
-  void pause();
-  void enter();
-  void disp();
-
-  //vars
-  int output;
-  int width=0;
-  int length=0;
-  int popDen;
-  int maxSize;
-  char userResponse1;
-  char userResponse;
-  int randomWidth;
-  int randomLength;
-  int populationDen;
-  double populationDenCalc;
-  int intLine;
-  int intLineRow;
-  int intLineCol;
-  int counter;
-  char tempChar;
-  string userBoundary;
-  int xCounter;
-  char outputDecision;
-  ofstream outputFile;
-  double probOfX;
-  char pausesOrEnter;
-
-
-  char *myArrayRow;
-  char *myArrayCol;
-
-};
+//class that is supposed to take in the paramters from either the user or the input filt to create 2D array
 class GameBoard{
 public:
-  GameBoard();
-  ~GameBoard();
+  GameBoard(); //constructor
+  ~GameBoard(); //deconstructor
 
+  //functions
   void getRandomValues();
   void getFileValues();
   bool safeInt(int &output);
   void outputToFile();
   void getInputInfo();
+
+  //vars
   int width;
   int widthTemp;
   int lengthTemp;
   int probOfX;
   int length;
+  int width1;
+  int length1;
+  int userRand1;
   int userRand;
-  int popDen;
+  double randNumUser;
   string fileName;
   string textLine;
   ifstream userFile;
@@ -91,24 +48,34 @@ public:
 //idea provided to me by the tutoring center
 class Classic{
 public:
-  Classic();
-  ~Classic();
+  Classic(); //constructor
+  ~Classic(); //deconstructor
 
+  //function
   void startClassic();
+
+  //vars
   char ** nextArr = NULL;
   int width;
   int length;
+  int width6;
+  int length6;
   int width1;
-  int width2;
+  int length1;
+
+  int neighborCounter;
 
 
 };
 class Mirror{
 public:
-  Mirror();
-  ~Mirror();
+  Mirror(); //constructor
+  ~Mirror(); //deconstructor
 
+  //functions
   void startMirror();
+
+  //vars
   char ** nextArr = NULL;
   int width;
   int length;
@@ -116,10 +83,13 @@ public:
 };
 class Doughnut{
 public:
-  Doughnut();
-  ~Doughnut();
+  Doughnut(); //constructor
+  ~Doughnut(); //deconstructor
 
+  //functions
   void startDoughnut();
+
+  //vars
   char ** nextArr = NULL;
   int width;
   int length;

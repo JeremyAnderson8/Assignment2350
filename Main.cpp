@@ -4,7 +4,10 @@
 using namespace std;
 
 int main(int argc, char **argv) {
+  //creates instance of GameBoard
   GameBoard *myBoard = new GameBoard();
+  //starts the program
+  //calls getInputInfo
   myBoard->getInputInfo();
   char outputDecision;
   bool validResponse1 = false;
@@ -13,7 +16,6 @@ int main(int argc, char **argv) {
     cin >> outputDecision;
     if(tolower(outputDecision) == 'f') {
       validResponse1 = true;
-      //outputToFile();
       break;
     }
     else if(tolower(outputDecision) == 'c') {
@@ -23,29 +25,28 @@ int main(int argc, char **argv) {
       bool validResponse = false;
       while(validResponse == false){
         if(tolower(pausesOrEnter) == 'e'){
-          //enter()
           validResponse= true;
           break;
 
         }
         else if(tolower(pausesOrEnter) == 'p'){
-          //pause();
-          validResponse= true;
+          validResponse = true;
           break;
         }
         else{
           cout << "Not a valid input" << endl;
         }
       }
+
     }
     else{
       cout << "Not a valid input" << endl;
     }
   }
-  GameOfLife *myGame = new GameOfLife();
   char userResponse;
 
   bool validResponse = false;
+  //depending on user input, calls corresponding boundary function
   while(validResponse == false){
     cout << "Which game mode would you like?" << endl;
     cout << "Enter 'C' for Classic" << endl;
@@ -71,8 +72,6 @@ int main(int argc, char **argv) {
       break;
     }
   }
-
-  delete myGame;
 
   return 0;
 }
